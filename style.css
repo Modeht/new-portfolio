@@ -1,4 +1,6 @@
+@import url('https://fonts.googleapis.com/css2?family=Changa:wght@500&display=swap');
 *{
+    overflow: hidden;  
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -8,75 +10,151 @@
     height: 100vh;
     background-color: #212121;
 }
-#shadowrapper{
-    display: block;
-    height: 100%;
-    filter: drop-shadow();
-    /* box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24); */
-    transition: all 0.3s cubic-bezier(.25,.8,.25,1);
-}
 #circle{
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: #ffb300;
-    clip-path: ellipse(34.25% 70% at 0% 50%);
-    /* box-shadow: 0 14px 28px rgba(155, 126, 0, 0.25), 0 10px 10px rgba(155, 126, 0, 0.22); */
+    background-color: rgb(255, 179, 0);
+    clip-path: ellipse(35% 65% at 0% 50%);
 }
-#icons{
-    height: 100%;
-    width: 7%;
+#identity{
+    font-family: 'Changa', sans-serif;
+    text-align: center;
+    font-size: larger;
     position: absolute;
-    left: 25%;
+    top: 25%;
+    left: 2%;
+    height: 50%;
+    width: 20%;
 }
+#nametag{
+}
+#arabicnametag{
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 .icon{
     width: 40px !important;
     height: 40px;
     border-radius: 50%;
-    color: #353535;
+    color: #424242;
     border: solid 2px #212121;
     background-color:#ffe54c ;
     cursor: pointer;
 }
 .icon:hover{
-    /* width: 50px;
-    height: 50px; */
-    color: #0f0f0f;
-    transition: all ease-in 0.05s;
+    /* color: #000000; */
+    color: #ffe54c;
+    background-color: #212121;
+    border: solid 2px #ffe54c;
+    transform: rotate(360deg);
+    transition: all cubic-bezier(0.23, 1, 0.320, 1) 0.15s;
 }
-.profile-icon{
+.bar{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+    height: 40px;
+}
+.bar span{
+    align-self: center;
+}
+
+
+
+
+#father-div{
+    position: relative;
+    width: 80%;
+    height: 100%;
+    left: 20%;
+}
+.profile{
     position: absolute;
-    top: 15%;
-    left: 50%;
-    padding: 6.5px;
-    /* color: #ffe54c;
-    background: #353535;
-    border: solid 1.6px #212121; */
+    top: 10%;
+    left: 8%;
 }
-.phone-icon{
+.phone{
     position: absolute;
-    top: 30%;
-    left: 95%;
-    padding: 5px;
+    top: 25%;
+    left: 14%;
 }
-.mail-icon{
+.mail{
     position: absolute;
     top: 45%;
-    left: 115%;
-    padding: 5px;
+    left: 17%;
+}
+.github{
+    position: absolute;
+    top: 65%;
+    left: 15.5%;
+}
+.address{
+    position: absolute;
+    top: 85%;
+    left: 9%;
+}
+
+.expand{
+    position: absolute;
+    width: 80%;
+    height: 80%;
+    left: 4%;
+    top:10%;
+    background-color: aliceblue;
+    border-radius: 4px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+    transition: all 0.3s cubic-bezier(.25,.8,.25,1);
+    /* transition: all ease-in .2s; */
+}
+.expand:hover{
+    
+  box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22)
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.profile-icon{
+    padding: 7px;
+}
+
+.phone-icon{
+    padding: 6px;
+}
+.mail-icon{
+    padding: 6px;
 }
 .github-icon{
-    position: absolute;
-    top: 60%;
-    left: 105%;
     padding: 5px;
 }
 .address-icon{
-    position: absolute;
-    top: 75%;
-    left: 70%;
     padding: 5px;
 
 }
