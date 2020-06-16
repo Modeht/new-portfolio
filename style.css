@@ -1,6 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400&family=Roboto&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Aref+Ruqaa:wght@400;700&display=swap');
-
 *{
     overflow: hidden;  
     margin: 0;
@@ -21,27 +20,117 @@
     background-color: #ffff00;
     clip-path: ellipse(35% 65% at 0% 50%);
 }
-#identity{
-    /* color: white; */
-    font-weight: 500;
-    text-align: center;
-    font-size: larger;
+
+.side-container{
+    display: flex;
+    justify-content: center;
+    width: 25%;
+    min-height: 100vh;
+    background: transparent;
+    align-items: center;
+    position: relative;
+}
+.side-container .box{
+    position: relative;
+    width: 65%;
+    height: 300px;
+    overflow: hidden;    
+    background-color: transparent;
+    color: white;
+    border-radius: 10%;
+    transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+.side-container .box:hover{
+    background-color: #212121;
+    border-radius: 4px;
+    box-shadow: 0 14px 28px rgba(0,0,0,0.1), 0 10px 10px rgba(0, 0, 0, 0.1);    
+    transform: scale(1.4, 1.5);
+    transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+.side-container .box .imgbox{
+    position: relative;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    /* filter: drop-shadow(1px 4px 0px red); */
+    clip-path: circle(400px at center);
+    transition: .5s;
+}
+.side-container .box:hover .imgbox{
+    clip-path: circle(60px at 50% 25%);
+}
+.side-container .box .imgbox img{
     position: absolute;
-    top: 25%;
-    left: 2%;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.side-container .box .content{
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    opacity: 0;
+    width: 100%;
     height: 50%;
-    width: 20%;
 }
-#nametag{
+.side-container .box:hover .content{    
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    font-size: small;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    opacity: 1;
 }
-#arabicnametag{
+.min-div{
+    font-family: 'Poppins', sans-serif;
+    width: 95%;
+    height: 29%;
+    background-color: white;
+    color: #212121;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 5px;
+    transition: all ease-in-out .5s;
 }
-
-
-
-
-
-
+.side-container .box .content .header{
+    opacity: 0;
+}
+.side-container .box .content .title{
+    opacity: 0;
+}
+.side-container .box .content .education{
+    opacity: 0;
+}
+.side-container .box:hover .content .header{
+    opacity: 1;
+    transition: opacity cubic-bezier(0.6, 0.04, 0.98, 0.335) .1s;
+    transition-delay: .5s;
+}
+.side-container .box:hover .content .title{
+    opacity: 1;
+    transition: opacity cubic-bezier(0.6, 0.04, 0.98, 0.335) .1s;
+    transition-delay: .6s;
+}
+.side-container .box:hover .content .education{
+    opacity: 1;
+    transition: opacity cubic-bezier(0.6, 0.04, 0.98, 0.335) .1s;
+    transition-delay: .7s;
+}
+.side-container .box .content .header:hover,
+.side-container .box .content .title:hover,
+.side-container .box .content .education:hover
+{
+    background-color: #ffff00;
+    transform: scale(1.15, 1.15);
+    transition: all ease-in-out .2s;
+}
 
 
 
@@ -50,8 +139,8 @@
 
 
 .icon{
-    width: 40px !important;
-    height: 40px;
+    width: 45px !important;
+    height: 45px;
     border-radius: 50%;
     color: #212121;
     border: solid 2px #212121;
@@ -64,14 +153,15 @@
     background-color: #000;
     border: solid 2px #ffff00;
     transform: rotate(360deg);
-    transition: all cubic-bezier(0.23, 1, 0.320, 1) 0.2s;
+    /* transform: scale(1.1, 1.1); */
+    transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+    /* transition: all cubic-bezier(0.23, 1, 0.320, 1) 0.2s; */
 }
 .bar{
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    width: 100%;
-    height: 40px;
+    width: 100%;    
 }
 .bar span{
     align-self: center;
@@ -140,17 +230,6 @@
 /* .expand:hover{
   box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22)
 } */
-
-
-
-
-
-
-
-
-
-
-
 
 
 
