@@ -24,7 +24,7 @@
 .side-container{
     display: flex;
     justify-content: center;
-    width: 25%;
+    width: 30%;
     min-height: 100vh;
     background: transparent;
     align-items: center;
@@ -32,20 +32,21 @@
 }
 .side-container .box{
     position: relative;
-    width: 65%;
+    width: 60%;
     height: 300px;
     overflow: hidden;    
-    background-color: transparent;
+    background-color: #21212185;
     color: white;
-    border-radius: 10%;
+    border-radius: 2%;
     transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
 }
+
 .side-container .box:hover{
     background-color: #212121;
     border-radius: 4px;
     box-shadow: 0 14px 28px rgba(0,0,0,0.1), 0 10px 10px rgba(0, 0, 0, 0.1);    
-    transform: scale(1.4, 1.5);
-    transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+    transform: scale(1.2, 1.2);
+    transition: transform 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
 }
 .side-container .box .imgbox{
     position: relative;
@@ -96,8 +97,8 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    text-align: center;
     border-radius: 5px;
-    transition: all ease-in-out .5s;
 }
 .side-container .box .content .header{
     opacity: 0;
@@ -129,7 +130,7 @@
 {
     background-color: #ffff00;
     transform: scale(1.15, 1.15);
-    transition: all ease-in-out .2s;
+    transition: transform ease-in-out .2s;
 }
 
 
