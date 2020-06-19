@@ -1,15 +1,22 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400&family=Roboto&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Aref+Ruqaa:wght@400;700&display=swap');
-*{
+@import url('https://fonts.googleapis.com/css2?family=Cairo:wght@200;300;400;600;700;900&display=swap');
+/* html{
     overflow: hidden;  
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+} */
+body{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; 
+    overflow: hidden;
 }
 .container{
+    overflow: hidden;
     position: relative;
     height: 100vh;
-    background-color: #212121;
+    background-color: #0D0D0D;
 }
 #circle{
     position: absolute;
@@ -17,27 +24,30 @@
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: #ffff00;
+    background-color: #F2F2F2;
     clip-path: ellipse(35% 65% at 0% 50%);
 }
 
 .side-container{
+    position: relative;
     display: flex;
     justify-content: center;
     width: 30%;
-    min-height: 100vh;
+    height: 100%;
     background: transparent;
     align-items: center;
-    position: relative;
+    overflow: hidden;
 }
 .side-container .box{
+    box-sizing: border-box;
     position: relative;
     width: 60%;
-    height: 300px;
+    height: 50%;
     overflow: hidden;    
-    background-color: #21212185;
+    background-color: #0D0D0D85;
     color: white;
-    border-radius: 2%;
+    border: 1.5px solid #0D0D0D85;
+    border-radius: 4px;
     transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
 }
 
@@ -54,17 +64,15 @@
     left: 0;
     width: 100%;
     height: 100%;
-    /* filter: drop-shadow(1px 4px 0px red); */
     clip-path: circle(400px at center);
-    transition: .5s;
+    transition: .3s;
 }
 .side-container .box:hover .imgbox{
-    clip-path: circle(60px at 50% 25%);
+    clip-path: circle(70px at 50% 25%);
 }
 .side-container .box .imgbox img{
     position: absolute;
     top: 0;
-    left: 0;
     width: 100%;
     height: 100%;
     object-fit: cover;
@@ -90,10 +98,11 @@
 }
 .min-div{
     font-family: 'Poppins', sans-serif;
+    font-size: small;
     width: 95%;
     height: 29%;
     background-color: white;
-    color: #212121;
+    color: #0D0D0D;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -112,147 +121,143 @@
 .side-container .box:hover .content .header{
     opacity: 1;
     transition: opacity cubic-bezier(0.6, 0.04, 0.98, 0.335) .1s;
-    transition-delay: .5s;
+    transition-delay: .4s;
 }
 .side-container .box:hover .content .title{
     opacity: 1;
     transition: opacity cubic-bezier(0.6, 0.04, 0.98, 0.335) .1s;
-    transition-delay: .6s;
+    transition-delay: .5s;
 }
 .side-container .box:hover .content .education{
     opacity: 1;
     transition: opacity cubic-bezier(0.6, 0.04, 0.98, 0.335) .1s;
-    transition-delay: .7s;
+    transition-delay: .6s;
 }
 .side-container .box .content .header:hover,
 .side-container .box .content .title:hover,
 .side-container .box .content .education:hover
 {
-    background-color: #ffff00;
-    transform: scale(1.15, 1.15);
-    transition: transform ease-in-out .2s;
+    color: white;
+    border: 1px solid #0B42FF;
+    background-color: #0B42FF;
+    /* transform: skew(1deg, 1deg); */
+    transform: scale3d(1.15,1.15,1.15);
+    transition: transform ease-in-out 0.1s;
 }
-
-
-
-
-
-
-
-.icon{
-    width: 45px !important;
-    height: 45px;
-    border-radius: 50%;
-    color: #212121;
-    border: solid 2px #212121;
-    background-color:#f5deb3 ;
-    cursor: pointer;
-}
-.icon:hover{
-    /* color: #000000; */
-    color: #ffff00;
-    background-color: #000;
-    border: solid 2px #ffff00;
-    transform: rotate(360deg);
-    /* transform: scale(1.1, 1.1); */
-    transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
-    /* transition: all cubic-bezier(0.23, 1, 0.320, 1) 0.2s; */
-}
-.bar{
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    width: 100%;    
-}
-.bar span{
-    align-self: center;
-}
-
-
-
 
 #father-div{
     position: relative;
     display: flex;
     flex-direction: row;
     justify-content: center;
-    width: 80%;
+    width: 70%;
     height: 100%;
-    left: 20%;
+    left: 30%;
 }
-#sentence{
+.sentence{
     font-family: 'Poppins', sans-serif;
-    font-size: 400;
-    align-self: center; 
+    font-weight:400 ;
+    width: 47%;
+    height: 50%;
+    display: flex;
+    align-self: center;
+    flex-direction: column;
+    justify-content: space-around;
     color: #fff; 
 }
-#sentence .arabic{
-    font-family: 'Aref Ruqaa', serif;
-    font-weight: 400;
+.quote{
+    font-size:1.7rem ;
+}
+
+.quote-arabic{
+    font-family: 'Cairo', sans-serif;
+    font-size:1.7rem ;
+}
+
+
+
+
+.icon{
+    width: 55px !important;
+    height: 55px;
+    border-radius: 50%;
+    color: #fff;
+    border: solid 2px #0D0D0D;
+    background-color:#BF1736 ;
+    cursor: pointer;
+    box-sizing: border-box;
+}
+.icon:hover{
+    color: #fff;
+    background-color: #0D0D0D;
+    border: solid 2px #BF1736;
+    transform: scale(1.2,1.2);
+    transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
 }
 .profile{
     position: absolute;
     top: 10%;
-    left: 8%;
+    left: -4%;
 }
 .phone{
     position: absolute;
     top: 25%;
-    left: 14%;
+    left: 2%;
 }
 .mail{
     position: absolute;
     top: 45%;
-    left: 17%;
+    left: 4.5%;
 }
 .github{
     position: absolute;
     top: 65%;
-    left: 15.5%;
+    left: 3%;
 }
 .address{
     position: absolute;
     top: 85%;
-    left: 9%;
+    left: -4.5%;
 }
 
 .expand{
     position: absolute;
-    width: 80%;
-    height: 80%;
-    left: 4%;
-    top:10%;
-    background-color: aliceblue;
-    border-radius: 6px;
+    width: 120%;
+    height: 90%;
+    left: -30%;
+    top:5%;
+    background-color: rgba(255, 255, 255, 0.95);
+    border-radius: 2px;
     box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
     transition: all 0.3s cubic-bezier(.25,.8,.25,1);
-    /* transition: all ease-in .2s; */
-}
-/* .expand:hover{
-  box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22)
-} */
-
-
-
-
-.profile-icon{
-    padding: 7px;
+    overflow: visible;  
 }
 
-.phone-icon{
-    padding: 6px;
-}
-.mail-icon{
-    padding: 6px;
-}
-.github-icon{
-    padding: 5px;
-}
+
+.profile-icon,
+.phone-icon,
+.mail-icon,
+.github-icon,
 .address-icon{
-    padding: 5px;
-
+    padding: 13px;
 }
 
+
+.bar{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+    overflow: visible; 
+    align-items: center; 
+    height: 10%;
+}
+.open{
+    background-color: #BF1736;
+}
+.bar span{
+    align-self: center;
+}
 
 
 
