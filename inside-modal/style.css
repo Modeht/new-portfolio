@@ -1,0 +1,38 @@
+body{
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.card{
+    display: flex;
+    position: relative;
+    width: 600px;
+    height: 400px;
+    background-color: burlywood;
+    justify-content: center;
+    align-items: center;
+}
+.card::before{
+    content: "Who Am I?";
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background-color: aquamarine;
+    transition: all cubic-bezier(0.77, 0, 0.175, 1) 1s;
+}
+.card:hover::before{
+    width: 00%;
+    color: transparent;
+    text-align: center;
+    transition: all cubic-bezier(0.77, 0, 0.175, 1) 1s;
+}
