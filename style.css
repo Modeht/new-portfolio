@@ -226,8 +226,8 @@ body{
     height: 90%;
     left: -10%;
     top:5%;
-    background-color: rgba(255, 255, 255, 0.95);
-    border-radius: 2px;
+    background-color: rgba(255, 255, 255);
+    border-radius: 4px;
     box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
     transition: all 0.3s cubic-bezier(.25,.8,.25,1);
     overflow: visible;  
@@ -250,14 +250,69 @@ body{
     width: 100%;
     overflow: visible; 
     align-items: center; 
-    height: 10%;
 }
-.open{
-    background-color: #BF1736;
+.open .icon{
+    margin: 10px;
 }
 .bar span{
     align-self: center;
 }
+.expand .body{
+    font-family: 'Poppins', sans-serif;
+    width: 100%;
+    height: 90%;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
+.card{
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    width: 95%;
+    height: 30%;
+    background-color: white;
+    justify-content: center;
+    align-items: center;
+    border-radius: 4px;
+    box-shadow: 0 14px 28px rgba(0,0,0,0.3), 0 10px 10px rgba(0, 0, 0, 0.3);
+}
+.card::after{
+    content: "Who Am I?";
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background-color: #BF1736;
+    border-radius: 4px;
+    color: #fff;
+    transition: all cubic-bezier(0.77, 0, 0.175, 1) 0.3s;
+}
+.card:hover::after{
+    width: 0%;
+    color: transparent;
+    text-align: center;
+    transition: width cubic-bezier(0.77, 0, 0.175, 1) 0.7s, color ease-out 0.2s;
+    
+}
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
