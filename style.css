@@ -1,18 +1,15 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400&family=Roboto&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Cairo:wght@200;300;400;600;700;900&display=swap');
-/* html{
-    overflow: hidden;  
-    margin: 0;
-    padding: 0;
+
+*{
     box-sizing: border-box;
-} */
+}
 ul{
     margin: 2px 0;
 }
 body{
     margin: 0;
     padding: 0;
-    box-sizing: border-box; 
     overflow: hidden;
 }
 .container{
@@ -21,7 +18,8 @@ body{
     height: 100vh;
     background-color: #14213D;
 }
-#circle{
+/* square section */
+#square{
     position: absolute;
     top: 0;
     left: 0;
@@ -41,12 +39,10 @@ body{
     overflow: hidden;
 }
 .side-container .box{
-    box-sizing: border-box;
     position: relative;
     width: 60%;
     height: 60%;
     overflow: hidden;    
-    /* background-color: #0D0D0D85; */
     color: white;
     border: 1.5px solid #00000050;
     border-radius: 10px;
@@ -109,7 +105,6 @@ body{
     align-items: center;
     text-align: center;
     border-radius: 5px;
-    box-sizing: border-box;
 }
 .side-container .box .content .header{
     opacity: 0;
@@ -157,8 +152,8 @@ body{
 }
 .sentence{
     font-family: 'Poppins', sans-serif;
-    font-weight:400 ;
-    width: 70%;
+    font-weight:400;
+    width: 60%;
     height: 50%;
     display: flex;
     align-self: center;
@@ -167,11 +162,11 @@ body{
     color: #fff; 
 }
 .quote{
-    font-size:2rem ;
+    font-size:1.8rem ;
 }
 .quote-arabic{
     font-family: 'Cairo', sans-serif;
-    font-size:2rem ;
+    font-size:1.8rem ;
 }
 .icon{
     width: 55px !important;
@@ -181,7 +176,6 @@ body{
     border: solid 1.5px #FCA311;
     background-color:#FCA311 ;
     cursor: pointer;
-    box-sizing: border-box;
     transition: transform 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
 }
 .icon:hover{
@@ -236,7 +230,6 @@ body{
     box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
     transition: all 0.3s cubic-bezier(.25,.8,.25,1);
     overflow: visible;  
-    box-sizing: border-box;
 }
 .bar{
     position: relative;
@@ -271,7 +264,6 @@ body{
     font-family: 'Poppins', sans-serif;
     width: 100%;
     height: 87%;
-    box-sizing: border-box;
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
@@ -284,7 +276,6 @@ body{
     font-family: 'Poppins', sans-serif;
     width: 100%;
     height: 87%;
-    box-sizing: border-box;
     display: flex;
     flex-direction: row;
     justify-content: space-around;
@@ -296,14 +287,6 @@ body{
 .socials.expand .form{
     width: 60%;
     height:80%;
-}
-.social-icons{
-    position: absolute;
-    display: flex;
-    flex-direction: column;
-    height: 80%;
-    top: 20%;
-    justify-content: space-around;
 }
 .card{
     display: flex;
@@ -364,7 +347,7 @@ body{
      color ease-in-out .7s;
 }
 .vert-card:hover::after{
-    font-size: medium;
+    font-size: larger;
     height: 20%;
     text-align: center;
     background-color: #FCA311;
@@ -375,8 +358,8 @@ body{
      color ease-in-out .7s;
 }
 .card-content{
-    width: 80%;
     position: absolute;
+    width: 80%;
     left: 20%;
     padding: 10px;
 }
@@ -410,15 +393,43 @@ body{
 .social-card::after{
     content: "Socials";
 }
-
+.social-icons{
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 80%;
+    top: 20%;
+    justify-content: space-around;
+}
 .social-icon{
-    font-size: 2rem;
+    font-size: 3rem;
     color: #FCA311;
 }
 .social-icon:hover{
     color: #000000;
 }
-
+/* .Linkedin{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    text-align: center;
+    text-decoration: none;
+}
+.text-icon{
+    cursor: pointer;
+    display: none;
+    padding: 0 0 0 10px;
+}
+.show{
+    display: block;
+}
+.Linkedin.shown{
+    width: 60%;
+    background-color: #FCA311;
+    /* border-radius: 20px; 
+    color: #E5E5E5;
+} */
 
 
 
@@ -426,37 +437,59 @@ body{
 /* responsive design */
 
 /* at 360px */
-@media screen and (max-width: 360px){
-    #circle{
-        clip-path: ellipse(60% 55% at 0% 50%);
+@media screen and (max-width: 425px){    
+    #square{
+        height: 90%;
+        background-color: #FFFFFF;
+        clip-path: inset(0 0% 0 0);
+        /* z-index: 100; */
     }
-    
-    .profile{
-        left: 33%;
+    .sentence{
+        display: none;
     }
-    .phone{
-        top: 26%;
-        left: 47%;
-    }
-    .mail{
-        left: 52%;
-    }
-    .github{
-        left: 47%;
-    }
-    .address{
-        left: 34%;
-    }
-    
     #father-div{
-        width: 95%;
-        left: 5%;
-    }
-    .expand{
-        width: 95%;
-        height: 95%;
+        position: absolute;
+        width: 100%;
+        height: 10%;
         left: 0;
-        top:2.5%;       
+        bottom: 0;
+    }
+    .profile{
+        left: 5%;
+        top:-35%;
+    }
+    .contacts{
+        left: 30%;
+        top:-35%;
+    }
+    .work{
+        left: 55%;
+        top:-35%;
+    }
+    .socials{
+        left: 80%;
+        top:-35%;
+    }
+    .side-container{
+        /* display: none; */
+        width: 100%;
+    }    
+    .expand{
+        position: fixed;
+        width: 100%;
+        height: 100vh;
+        left: 0%;
+        top:0%;  
+    }
+    .side-container .box{
+        /* position: relative; */
+        width: 70%;
+        height: 70%;
+        /* overflow: hidden;     */
+        /* color: white; */
+        /* border: 1.5px solid #00000050; */
+        /* border-radius: 10px; */
+        /* transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1); */
     }
 }
 

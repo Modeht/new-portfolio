@@ -69,3 +69,17 @@ function open_modal(obj) {
     })
 }
 
+var social_icons = document.querySelectorAll('social-icon');
+// social_icons.forEach(icon =>{
+//     icon.addEventListener('mouseover');
+// })
+
+
+document.querySelector('.Linkedin').addEventListener('mouseover', function (){
+    document.querySelector('.text-icon').classList.add("show");
+    this.classList.add('shown');
+});
+document.querySelector('.Linkedin').addEventListener('mouseleave', ()=>{
+    // console.log("hi");
+    document.querySelector('.text-icon').classList.remove("show");
+});
