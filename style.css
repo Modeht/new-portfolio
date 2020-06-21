@@ -6,6 +6,9 @@
     padding: 0;
     box-sizing: border-box;
 } */
+ul{
+    margin: 2px 0;
+}
 body{
     margin: 0;
     padding: 0;
@@ -16,7 +19,7 @@ body{
     overflow: hidden;
     position: relative;
     height: 100vh;
-    background-color: #0D0D0D;
+    background-color: #14213D;
 }
 #circle{
     position: absolute;
@@ -24,11 +27,9 @@ body{
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: #F2F2F2;
+    background-color: #FFFFFF;
     clip-path: inset(0 65% 0 0);
-    /* clip-path: circle(50% at 0 50%); */
 }
-
 .side-container{
     position: relative;
     display: flex;
@@ -43,18 +44,17 @@ body{
     box-sizing: border-box;
     position: relative;
     width: 60%;
-    height: 50%;
+    height: 60%;
     overflow: hidden;    
-    background-color: #0D0D0D85;
+    /* background-color: #0D0D0D85; */
     color: white;
-    border: 1.5px solid #0D0D0D85;
-    border-radius: 4px;
+    border: 1.5px solid #00000050;
+    border-radius: 10px;
     transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
 }
-
 .side-container .box:hover{
-    background-color: #212121;
-    border-radius: 4px;
+    background-color: #000000;
+    border-radius: 10px;
     box-shadow: 0 14px 28px rgba(0,0,0,0.1), 0 10px 10px rgba(0, 0, 0, 0.1);    
     transform: scale(1.2, 1.2);
     transition: transform 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
@@ -139,9 +139,9 @@ body{
 .side-container .box .content .title:hover,
 .side-container .box .content .education:hover
 {
-    color: white;
-    border: 1px solid #0B42FF;
-    background-color: #0B42FF;
+    color: #000;
+    border: 1px solid #E5E5E5;
+    background-color: #E5E5E5;
     transform: scale3d(1.15,1.15,1.15);
     transition: transform ease-in-out 0.1s;
 }
@@ -169,30 +169,25 @@ body{
 .quote{
     font-size:2rem ;
 }
-
 .quote-arabic{
     font-family: 'Cairo', sans-serif;
     font-size:2rem ;
 }
-
-
-
-
 .icon{
     width: 55px !important;
     height: 55px;
     border-radius: 50%;
-    color: #fff;
-    border: solid 1.5px #0D0D0D;
-    background-color:#BF1736 ;
+    color: #000000;
+    border: solid 1.5px #FCA311;
+    background-color:#FCA311 ;
     cursor: pointer;
     box-sizing: border-box;
     transition: transform 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
 }
 .icon:hover{
-    color: #fff;
-    background-color: #0D0D0D;
-    border: solid 2px #BF1736;
+    color: #FCA311;
+    background-color: #000000;
+    border: solid 1.5px #000000;
     transform: scale(1.15,1.15);
     transition: transform 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
 }
@@ -236,7 +231,7 @@ body{
     height: 90%;
     left: -10%;
     top:5%;
-    background-color: rgba(255, 255, 255);
+    background-color: #E5E5E5;
     border-radius: 4px;
     box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
     transition: all 0.3s cubic-bezier(.25,.8,.25,1);
@@ -262,15 +257,15 @@ body{
     cursor: pointer;
     margin: 10px 20px;
     font-size: 3em;
-    color: #BF1736;
-    filter: drop-shadow(1px 1px 1px #0d0d0d);
-    transition: transform ease-in 0.1s;
+    color: #FCA311;
+    /* filter: drop-shadow(2px 2px 0.5px #000000); */
+    transition: transform ease-in 0.2s;
 }
 .exit:hover{
-    color: #0D0D0D;
-    filter: drop-shadow(1px 1px 1px #bfbfbf);
-    transform: scale3d(1.1,1.1,1.1);
-    transition: transform ease-in 0.1s;
+    color: #000000;
+    filter: drop-shadow(1px 1px 0px #E5E5E5);
+    transform: scale(1.1,1.1);
+    transition: transform ease-in 0.2s;
 }
 .expand .body{
     font-family: 'Poppins', sans-serif;
@@ -285,6 +280,31 @@ body{
     bottom: 0;
     left: 0;
 }
+.socials.expand .body{
+    font-family: 'Poppins', sans-serif;
+    width: 100%;
+    height: 87%;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+}
+.socials.expand .form{
+    width: 60%;
+    height:80%;
+}
+.social-icons{
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    height: 80%;
+    top: 20%;
+    justify-content: space-around;
+}
 .card{
     display: flex;
     flex-direction: column;
@@ -294,14 +314,29 @@ body{
     background-color: white;
     justify-content: center;
     align-items: center;
-    border-radius: 3px;
+    border-radius: 10px;
+    overflow: hidden;
     /* box-shadow: 0 4px 12px rgba(0,0,0,0.3), 0 3px 3px rgba(0, 0, 0, 0.3); */
 }
-.card:hover{
+.vert-card{
+    display: flex;
+    flex-direction: row;
+    position: relative;
+    width: 30%;
+    height: 95%;
+    background-color: white;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+    overflow: hidden;
+}
+.card:hover,
+.vert-card:hover{
     box-shadow: 0 8px 10px rgba(0,0,0,0.3), 0 7px 7px rgba(0, 0, 0, 0.3);
     transition: box-shadow cubic-bezier(0.25, 0.46, 0.45, 0.94) .7s;
 }
-.card::after{
+.card::after,
+.vert-card::after{
     content: "";
     display: flex;
     justify-content: center;
@@ -312,10 +347,38 @@ body{
     height: 100%;
     top: 0;
     left: 0;
-    background-color: #BF1736;
-    border-radius: 4px;
+    background-color: #14213D;
+    border-radius: 10px;
     color: #fff;
-    transition: all cubic-bezier(0.77, 0, 0.175, 1) 0.3s, font-size ease-in-out .5s;
+    transition: all cubic-bezier(0.77, 0, 0.175, 1) 0.3s;
+}
+.card:hover::after{
+    font-size: medium;
+    width: 20%;
+    text-align: center;
+    background-color: #FCA311;
+    color: #000;
+    transition: width cubic-bezier(0.77, 0, 0.175, 1) 0.7s,
+     font-size ease-in-out .7s,
+     background-color ease-in-out .7s,
+     color ease-in-out .7s;
+}
+.vert-card:hover::after{
+    font-size: medium;
+    height: 20%;
+    text-align: center;
+    background-color: #FCA311;
+    color: #000;
+    transition: height cubic-bezier(0.77, 0, 0.175, 1) 0.7s,
+     font-size ease-in-out .7s,
+     background-color ease-in-out .7s,
+     color ease-in-out .7s;
+}
+.card-content{
+    width: 80%;
+    position: absolute;
+    left: 20%;
+    padding: 10px;
 }
 .me.card::after{
     content: "Who Am I?";
@@ -326,7 +389,6 @@ body{
 .good.card::after{
     content: "Things I'm Good at";
 }
-
 .phone-numbers.card::after{
     content: "Phone";
 }
@@ -345,31 +407,17 @@ body{
 .interests.card::after{
     content: "Interests";
 }
-.card:hover::after{
-    font-size: medium;
-    width: 20%;
-    text-align: center;
-    transition: width cubic-bezier(0.77, 0, 0.175, 1) 0.7s,
-     font-size ease-in-out .7s;
-    
-}
-.card-content{
-    width: 80%;
-    position: absolute;
-    left: 20%;
-    padding: 10px;
+.social-card::after{
+    content: "Socials";
 }
 
-
-
-
-
-
-
-
-
-
-
+.social-icon{
+    font-size: 2rem;
+    color: #FCA311;
+}
+.social-icon:hover{
+    color: #000000;
+}
 
 
 
