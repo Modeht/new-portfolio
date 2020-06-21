@@ -7,35 +7,6 @@ modal_btn(card_btn);
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 function exit_button(obj){
     //logic is i get exit button handler remove open class
     // from div.bar (that is the class telling me the modal is open)
@@ -49,7 +20,11 @@ function exit_button(obj){
             parent_div.classList.remove('expand');
             let grand_parent = parent_div.parentNode;
             grand_parent.childNodes.forEach(node => {
-                node.removeAttribute('hidden');               
+                try{
+                    node.removeAttribute('hidden');
+                }catch(e){
+                    return false;
+                }               
             });
             this.setAttribute('hidden','hidden');
             parent_div.childNodes.forEach(node => {
@@ -68,8 +43,11 @@ function modal_btn(obj){
     };
 }
 function hideOtherButtons(obj){    
-    obj.parentNode.childNodes.forEach(node => {
-        if (node.classList[0] == obj.classList[0]){
+    console.log(obj.parentNode.childNodes);
+        obj.parentNode.childNodes.forEach(node => {
+        if(node.classList == undefined)
+            return false;
+        else if (node.classList[0] == obj.classList[0]){
             return true;            
         }
         else{

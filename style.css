@@ -25,7 +25,8 @@ body{
     width: 100%;
     height: 100%;
     background-color: #F2F2F2;
-    clip-path: ellipse(35% 65% at 0% 50%);
+    clip-path: inset(0 65% 0 0);
+    /* clip-path: circle(50% at 0 50%); */
 }
 
 .side-container{
@@ -108,6 +109,7 @@ body{
     align-items: center;
     text-align: center;
     border-radius: 5px;
+    box-sizing: border-box;
 }
 .side-container .box .content .header{
     opacity: 0;
@@ -140,7 +142,6 @@ body{
     color: white;
     border: 1px solid #0B42FF;
     background-color: #0B42FF;
-    /* transform: skew(1deg, 1deg); */
     transform: scale3d(1.15,1.15,1.15);
     transition: transform ease-in-out 0.1s;
 }
@@ -157,7 +158,7 @@ body{
 .sentence{
     font-family: 'Poppins', sans-serif;
     font-weight:400 ;
-    width: 47%;
+    width: 70%;
     height: 50%;
     display: flex;
     align-self: center;
@@ -166,12 +167,12 @@ body{
     color: #fff; 
 }
 .quote{
-    font-size:1.7rem ;
+    font-size:2rem ;
 }
 
 .quote-arabic{
     font-family: 'Cairo', sans-serif;
-    font-size:1.7rem ;
+    font-size:2rem ;
 }
 
 
@@ -182,44 +183,53 @@ body{
     height: 55px;
     border-radius: 50%;
     color: #fff;
-    border: solid 2px #0D0D0D;
+    border: solid 1.5px #0D0D0D;
     background-color:#BF1736 ;
     cursor: pointer;
     box-sizing: border-box;
+    transition: transform 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
 }
 .icon:hover{
     color: #fff;
     background-color: #0D0D0D;
     border: solid 2px #BF1736;
-    transform: scale(1.2,1.2);
-    transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+    transform: scale(1.15,1.15);
+    transition: transform 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
 }
 .profile{
     position: absolute;
-    top: 10%;
-    left: -4%;
+    top: 15%;
+    left: 4%;
 }
-.phone{
+.contacts{
     position: absolute;
-    top: 25%;
-    left: 2%;
+    top: 35%;
+    left: 4%;
 }
-.mail{
+.work{
     position: absolute;
-    top: 45%;
-    left: 4.5%;
+    top: 55%;
+    left: 4%;
 }
-.github{
+.socials{
     position: absolute;
-    top: 65%;
-    left: 3%;
-}
-.address{
-    position: absolute;
-    top: 85%;
-    left: -4.5%;
+    top: 75%;
+    left: 4%;
 }
 
+
+.profile-icon,
+.contact-icon,
+.work-icon,
+.socials-icon{
+    padding: 13px;
+}
+
+
+
+.button{
+    transition: top cubic-bezier(0.23, 1, 0.320, 1) .1s, left ease .2s;
+}
 .expand{
     position: absolute;
     width: 80%;
@@ -231,19 +241,10 @@ body{
     box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
     transition: all 0.3s cubic-bezier(.25,.8,.25,1);
     overflow: visible;  
+    box-sizing: border-box;
 }
-
-
-.profile-icon,
-.phone-icon,
-.mail-icon,
-.github-icon,
-.address-icon{
-    padding: 13px;
-}
-
-
 .bar{
+    position: relative;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -252,20 +253,37 @@ body{
     align-items: center; 
 }
 .open .icon{
-    margin: 10px;
+    margin: 10px 20px;
 }
 .bar span{
     align-self: center;
 }
+.exit{
+    cursor: pointer;
+    margin: 10px 20px;
+    font-size: 3em;
+    color: #BF1736;
+    filter: drop-shadow(1px 1px 1px #0d0d0d);
+    transition: transform ease-in 0.1s;
+}
+.exit:hover{
+    color: #0D0D0D;
+    filter: drop-shadow(1px 1px 1px #bfbfbf);
+    transform: scale3d(1.1,1.1,1.1);
+    transition: transform ease-in 0.1s;
+}
 .expand .body{
     font-family: 'Poppins', sans-serif;
     width: 100%;
-    height: 90%;
+    height: 87%;
     box-sizing: border-box;
     display: flex;
     flex-direction: column;
-    justify-content: space-around;
+    justify-content: space-evenly;
     align-items: center;
+    position: absolute;
+    bottom: 0;
+    left: 0;
 }
 .card{
     display: flex;
@@ -276,15 +294,20 @@ body{
     background-color: white;
     justify-content: center;
     align-items: center;
-    border-radius: 4px;
-    box-shadow: 0 14px 28px rgba(0,0,0,0.3), 0 10px 10px rgba(0, 0, 0, 0.3);
+    border-radius: 3px;
+    /* box-shadow: 0 4px 12px rgba(0,0,0,0.3), 0 3px 3px rgba(0, 0, 0, 0.3); */
+}
+.card:hover{
+    box-shadow: 0 8px 10px rgba(0,0,0,0.3), 0 7px 7px rgba(0, 0, 0, 0.3);
+    transition: box-shadow cubic-bezier(0.25, 0.46, 0.45, 0.94) .7s;
 }
 .card::after{
-    content: "Who Am I?";
+    content: "";
     display: flex;
     justify-content: center;
     align-items: center;
     position: absolute;
+    font-size: 2rem;
     width: 100%;
     height: 100%;
     top: 0;
@@ -292,14 +315,49 @@ body{
     background-color: #BF1736;
     border-radius: 4px;
     color: #fff;
-    transition: all cubic-bezier(0.77, 0, 0.175, 1) 0.3s;
+    transition: all cubic-bezier(0.77, 0, 0.175, 1) 0.3s, font-size ease-in-out .5s;
+}
+.me.card::after{
+    content: "Who Am I?";
+}
+.education.card::after{
+    content: "Education";
+}
+.good.card::after{
+    content: "Things I'm Good at";
+}
+
+.phone-numbers.card::after{
+    content: "Phone";
+}
+.mail-info.card::after{
+    content: "Mail";
+}
+.address-info.card::after{
+    content: "Address";
+}
+.courses.card::after{
+    content: "Courses";
+}
+.projects.card::after{
+    content: "Projects";
+}
+.interests.card::after{
+    content: "Interests";
 }
 .card:hover::after{
-    width: 0%;
-    color: transparent;
+    font-size: medium;
+    width: 20%;
     text-align: center;
-    transition: width cubic-bezier(0.77, 0, 0.175, 1) 0.7s, color ease-out 0.2s;
+    transition: width cubic-bezier(0.77, 0, 0.175, 1) 0.7s,
+     font-size ease-in-out .7s;
     
+}
+.card-content{
+    width: 80%;
+    position: absolute;
+    left: 20%;
+    padding: 10px;
 }
 
 
