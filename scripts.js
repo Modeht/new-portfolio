@@ -68,7 +68,7 @@ function open_modal(obj) {
     })
 }
 
-var social_icons = document.querySelectorAll('social-icon');
+// var social_icons = document.querySelectorAll('social-icon');
 // social_icons.forEach(icon =>{
 //     icon.addEventListener('mouseover');
 // })
