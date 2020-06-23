@@ -42,8 +42,7 @@ function modal_btn(obj){
         });
     };
 }
-function hideOtherButtons(obj){    
-    console.log(obj.parentNode.childNodes);
+function hideOtherButtons(obj){
         obj.parentNode.childNodes.forEach(node => {
         if(node.classList == undefined)
             return false;
@@ -74,12 +73,47 @@ var social_icons = document.querySelectorAll('social-icon');
 //     icon.addEventListener('mouseover');
 // })
 
+// let window_width = window.innerWidth;
+// console.log(window_width);
+// window.addEventListener('resize',()=>{
+//     console.log('resized');
+    
+//     // if()
+//     console.log('425');
+//     window_width = window.innerWidth;
+//     console.log(window_width);
+// })
+// // if(window.onresize){
+// //     console.log(window.innerWidth);
+// //     console.log(window_width);
+// // }
+// var tmot = setTimeout(()=> {
+//     if(window.innerWidth <= 425){  
+//         hover_changes();      
+//     };
+//     // else if()
+// },1500);
+// function hover_changes(){
+//     document.querySelector(".imgbox").style.cssText = "clip-path: circle(70px at 50% 25%);"
+//     document.querySelector('.box').style.cssText = `
+//         background-color: #343a40;
+//         border-radius: 10px;
+//         box-shadow: 0 14px 28px rgba(0,0,0,0.2), 0 10px 10px rgba(0, 0, 0, 0.2);    
+//         transform: scale(1.2, 1.2);
+//         transition: transform 0.3s cubic-bezier(0.165, 0.84, 0.44, 1);`;
+//         document.querySelector('.header').style.cssText = `            
+//         opacity: 1;
+//         transition: opacity cubic-bezier(0.6, 0.04, 0.98, 0.335) .1s;
+//         transition-delay: .3s;`;
+//         document.querySelector('.education').style.cssText = `            
+//         opacity: 1;
+//         transition: opacity cubic-bezier(0.6, 0.04, 0.98, 0.335) .1s;
+//         transition-delay: .4s;`;
+//         document.querySelector('.title').style.cssText = `            
+//         opacity: 1;
+//         transition: opacity cubic-bezier(0.6, 0.04, 0.98, 0.335) .1s;
+//         transition-delay: .5s;`;
 
-document.querySelector('.Linkedin').addEventListener('mouseover', function (){
-    document.querySelector('.text-icon').classList.add("show");
-    this.classList.add('shown');
-});
-document.querySelector('.Linkedin').addEventListener('mouseleave', ()=>{
-    // console.log("hi");
-    document.querySelector('.text-icon').classList.remove("show");
-});
+// }
+
+// window.matchMedia("(max-width:425px").matches

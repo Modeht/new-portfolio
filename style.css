@@ -53,7 +53,7 @@ body{
     transition: all 0.3s cubic-bezier(0.165, 0.84, 0.44, 1);
 }
 .side-container .box:hover{
-    background-color: #6c757d;
+    background-color: #343a40;
     border-radius: 10px;
     box-shadow: 0 14px 28px rgba(0,0,0,0.2), 0 10px 10px rgba(0, 0, 0, 0.2);    
     transform: scale(1.2, 1.2);
@@ -69,7 +69,7 @@ body{
     transition: .2s;
 }
 .side-container .box:hover .imgbox{
-    clip-path: circle(70px at 50% 25%);
+    clip-path: circle(80px at 50% 25%);
 }
 .side-container .box .imgbox img{
     position: absolute;
@@ -86,7 +86,7 @@ body{
     width: 100%;
     height: 50%;
 }
-.side-container .box:hover .content{    
+.side-container .box .content{    
     position: absolute;
     left: 0;
     bottom: 0;
@@ -101,19 +101,19 @@ body{
     font-size: 15px;
     width: 95%;
     height: 29%;
-    background-color: white;
-    color: #0D0D0D;
+    background-color: #f8f9fa;
+    color: #212529;
     display: flex;
     justify-content: center;
     align-items: center;
     text-align: center;
     border-radius: 5px;
 }
-/* .side-container .box .content .header,
+.side-container .box .content .header,
 .side-container .box .content .education,
 .side-container .box .content .title{
     opacity: 0;
-} */
+}
 .side-container .box .content .min-div{
     opacity: 0;
 }
@@ -132,7 +132,7 @@ body{
     transition: opacity cubic-bezier(0.6, 0.04, 0.98, 0.335) .1s;
     transition-delay: .5s;
 }
-.side-container .box:hover .content .header:hover,
+/* .side-container .box:hover .content .header:hover,
 .side-container .box:hover .content .education:hover,
 .side-container .box:hover .content .title:hover{
     color: #fff;
@@ -140,7 +140,7 @@ body{
     background-color: #212529;
     transform: scale3d(1.1,1.1,1.5);
     transition: transform ease-in-out 0.1s;
-}
+} */
 #father-div{
     position: relative;
     display: flex;
@@ -375,27 +375,6 @@ body{
     color: #6c757d;
     transition: color ease-in .1s;
 }
-/* .Linkedin{
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    text-align: center;
-    text-decoration: none;
-}
-.text-icon{
-    cursor: pointer;
-    display: none;
-    padding: 0 0 0 10px;
-}
-.show{
-    display: block;
-}
-.Linkedin.shown{
-    width: 60%;
-    background-color: #FCA311;
-    /* border-radius: 20px; 
-    color: #E5E5E5;
-} */
 
 
 
