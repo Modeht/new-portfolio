@@ -12,15 +12,16 @@ li{
 }
 html{
     position: relative;
-    height: 100%;
+    height: 100%;    
+    overflow: hidden;
 }
 body{
+    font-family: 'Poppins', sans-serif;
     position: relative;
     margin: 0;
     padding: 0;
-    overflow: hidden;
     height: 100%;
-    transition: transform ease-in 500ms;
+    overflow: hidden;
 }
 .pre-loader{
     background-color: #242F3F;
@@ -32,7 +33,7 @@ body{
     top: 0;
     left: 0;
     z-index: 100;
-    transition: transform ease-in 500ms;
+    transition: transform ease-in 400ms;
 }
 .loader {
   display: inline-block;
@@ -97,11 +98,7 @@ body{
 }
 
 
-
-
-
 .container{
-    overflow: hidden;
     position: relative;
     height: 100%;
 }
@@ -112,7 +109,7 @@ body{
     left: 0;
     width: 35%;
     height: 100%;
-    background-color: #E5E5E5;
+    background-color: #fff;
     clip-path: inset(0 0% 0 0);
 }
 .side-container{
@@ -123,35 +120,22 @@ body{
     height: 100%;
     background: transparent;
     align-items: center;
-    overflow: hidden;
 }
 .side-container .box{
     transform: translateX(-1000px);
     width: 60%;
-    height: 60%;
-    overflow: hidden;    
+    height: 60%; 
     color: white;
     border-radius: 10px;
-    transition: all 300ms cubic-bezier(.57,.21,.69,1.25);
+    transition: transform 300ms cubic-bezier(.57,.21,.69,1.25);
 }
 .side-container .box:hover{
     background-color: #0c090d;
     border-radius: 10px;
     box-shadow: 0 14px 28px rgba(0,0,0,0.2), 0 10px 10px rgba(0, 0, 0, 0.2);            
-    transition: all 300ms cubic-bezier(.57,.21,.69,1.25);
-}
-.side-container .box .imgbox{
-    position: relative;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    clip-path: circle(400px at center);
-    transition: clip-path 300ms cubic-bezier(.57,.21,.69,1.25);
-}
-.side-container .box:hover .imgbox{
-    clip-path: circle(80px at 50% 25%);
-    transition: clip-path 300ms cubic-bezier(.57,.21,.69,1.25);
+    /* transition: clip-path 200ms cubic-bezier(.57,.21,.69,1.25), */
+    /* box-shadow 200ms cubic-bezier(.57,.21,.69,1.25), */
+    /* ; */
 }
 .side-container .box .imgbox img{
     position: absolute;
@@ -160,18 +144,24 @@ body{
     height: 100%;
     object-fit: cover;
 }
-.side-container .box .content{
-    position: absolute;
+.side-container .box .imgbox{
+    position: relative;
+    top: 0;
     left: 0;
-    bottom: 0;
-    opacity: 0;
     width: 100%;
-    height: 50%;
+    height: 100%;
+    clip-path: circle(400px at center);
+    transition: clip-path 200ms cubic-bezier(.57,.21,.69,1.25);
+}
+.side-container .box:hover .imgbox{
+    clip-path: circle(80px at 50% 25%);
 }
 .side-container .box .content{    
     position: absolute;
     left: 0;
-    bottom: 0;
+    bottom: 0;    
+    height: 50%;
+    width: 100%;
     display: flex;
     flex-direction: column;
     justify-content: space-around;
@@ -179,7 +169,6 @@ body{
     opacity: 1;
 }
 .min-div{
-    font-family: 'Poppins', sans-serif;
     font-size: 15px;
     width: 95%;
     height: 29%;
@@ -214,15 +203,34 @@ body{
     transition: opacity cubic-bezier(.57,.21,.69,1.25) 100ms;
     transition-delay: 500ms;
 }
-/* .side-container .box:hover .content .header:hover,
-.side-container .box:hover .content .education:hover,
-.side-container .box:hover .content .title:hover{
-    color: #fff;
-    font-size: 15px;
-    background-color: #212529;
-    transform: scale3d(1.1,1.1,1.5);
-    transition: transform ease-in-out 0.1s;
-} */
+
+
+
+
+.box.first-open{
+    transform: scale(1.2,1.2);
+    background-color: #0c090d;
+    border-radius: 10px;
+    box-shadow: 0 14px 28px rgba(0,0,0,0.2), 0 10px 10px rgba(0, 0, 0, 0.2);
+}
+.box.first-open .imgbox{        
+    transition: clip-path 200ms cubic-bezier(.57,.21,.69,1.25);
+    clip-path: circle(80px at 50% 25%);
+}
+
+.side-container .box.first-open .content .header,
+.side-container .box.first-open .content .education,
+.side-container .box.first-open .content .title{
+    opacity: 1;
+}
+
+
+
+
+
+
+
+
 
 
 #father-div{
@@ -238,7 +246,6 @@ body{
 }
 .sentence{
     transform: translateX(2000px);
-    font-family: 'Poppins', sans-serif;
     font-weight:400;
     width: 70%;
     height: 50%;
@@ -249,7 +256,7 @@ body{
     justify-content: space-around;
     color: #ffffff;
     z-index: 2;
-    transition: transform ease-in 200ms;
+    transition: transform ease-in-out 150ms;
 }
 #father-div::before{
     position: absolute;
@@ -286,7 +293,7 @@ body{
     background-color: #14213D;
     border: solid 1.5px #14213D;
     transform: scale(1.15,1.15);
-    transition: transform 100ms cubic-bezier(.57,.21,.69,1.25);
+    /* transition: transform 100ms cubic-bezier(.57,.21,.69,1.25); */
 }
 .profile{
     position: absolute;
@@ -316,19 +323,18 @@ body{
 }
 .button{
     transition: left cubic-bezier(.57,.21,.69,1.25) 200ms, top cubic-bezier(.57,.21,.69,1.25) 200ms;
+    will-change: auto;
 }
 .expand{
     z-index: 4;
     position: absolute;
     width: 80%;
-    height: 88%;
-    background-color: #FFFFFF;
+    height: 90%;
     top: 5%;
     left: -10%;
+    background-color: #FFFFFF;
     border-radius: 10px;
     box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
-    transition: top cubic-bezier(.57,.21,.69,1.25) 300ms, left cubic-bezier(.57,.21,.69,1.25) 300ms;
-    overflow: visible;  
 }
 .bar{
     position: relative;
@@ -364,10 +370,9 @@ body{
 .exit:hover,
 .exit:active{
     color: #14213D;   
-    transition: color cubic-bezier(.57,.21,.69,1.25) 100ms;
+    /* transition: color cubic-bezier(.57,.21,.69,1.25) 100ms; */
 }
 .expand .body{
-    font-family: 'Poppins', sans-serif;
     width: 100%;
     height: 90%;
     display: flex;
@@ -388,13 +393,12 @@ body{
     justify-content: center;
     align-items: center;
     border-radius: 5px;
-    overflow: hidden;
     box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
     transition: all 300ms cubic-bezier(.25,.8,.25,1);
 }
 .card:hover{
     box-shadow: 0 8px 10px rgba(0,0,0,0.3), 0 7px 7px rgba(0, 0, 0, 0.3);
-    transition: box-shadow cubic-bezier(.57,.21,.69,1.25) 300ms;
+    /* transition: box-shadow cubic-bezier(.57,.21,.69,1.25) 300ms; */
 }
 .card::after{
     content: "";
@@ -407,10 +411,9 @@ body{
     height: 100%;
     top: 0;
     left: 0;
+    border-radius: 5px;
     background: rgb(15,24,45);
     background: linear-gradient(270deg, rgba(15,24,45,1) 8%, rgba(12,9,13,1) 100%);
-    /* background: #131515; */
-    /* background: radial-gradient(circle, rgba(29,70,53,1) 66%, rgba(82,183,136,1) 100%); */
     color: #fff;
     transition: all cubic-bezier(.57,.21,.69,1.25) 200ms;
 }
@@ -419,7 +422,6 @@ body{
     text-align: center;
     background-color: #E5E5E5;
     color: transparent;
-    transition: all cubic-bezier(.57,.21,.69,1.25) 200ms;
 }
 .card-content{
     position: absolute;
@@ -476,20 +478,21 @@ body{
 }
 .social-icon:hover{
     color: #14213D;
-    transition: color ease-in .1s;
 }
 
 
 
-form{
+/* form{
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
     height: 100%;
     width: 100%;
-    overflow: hidden;
-}
+} */
+
+
+
 /* cv button material design -------------------------------------------------- */
 .btn {
     justify-self: start;
@@ -497,8 +500,7 @@ form{
     position: relative;
     cursor: pointer;
     display: block;
-    padding: 4px 8px;  
-    overflow: hidden;
+    padding: 4px 8px;
     border-width: 0;
     outline: none;
     border-radius: 2px;
@@ -540,23 +542,20 @@ form{
   }
 /* end cv material button  -------------------------------------------------- */
 
-.form{
+/* .form{
     position: relative;
     width: 70%;
     height: 65%;
     background-color: transparent;
     border-radius: 5px;
-    overflow: hidden;
     box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
-    /* transition: all 300ms cubic-bezier(.25,.8,.25,1); */
+    /* transition: all 300ms cubic-bezier(.25,.8,.25,1); 
 }
 form input{
     height: 15%;
 }
 
 .form-item{
-    font-family: 'Poppins', sans-serif;
-    /* border: 1px solid #efefef; */
     border: none;
     font-size: 1em;
     width: 98%;
@@ -567,8 +566,6 @@ form input{
 }
 .form-item:focus{
     outline: 1px solid #FCA311;
-    /* border: none; */
-    /* border: solid 1px #FCA311; */
     border-radius: 2px;
     background-color: #fca21150;
 }
@@ -589,7 +586,7 @@ textarea{
 .submit-btn:hover,
 .submit-btn:active{
     background:#14213D;
-}
+} */
 
 
 /* responsive design */
@@ -627,7 +624,7 @@ textarea{
         background-color: #0c090d;
     }
     .button{
-        transition: top cubic-bezier(.57,.21,.69,1.25) 100ms;
+        transition: top ease-in-out 100ms;
     }    
     .profile,
     .contacts,
@@ -646,7 +643,6 @@ textarea{
         height: 100%;
         top: 0;
         left: 0;   
-        border-radius: 0;
-        transition: top cubic-bezier(.57,.21,.69,1.25) 150ms;      
+        border-radius: 0; 
     }        
 }

@@ -5,8 +5,6 @@ exit_button(exit_btn);
 modal_btn(card_btn);
 
 
-
-
 function exit_button(obj){
     //logic is i get exit button handler remove open class
     // from div.bar (that is the class telling me the modal is open)
@@ -71,28 +69,37 @@ function open_modal(obj) {
 window.onload = function(){
     setTimeout(() => {
         document.querySelector('.pre-loader').style.cssText = `transform: translateX(-100%);`;
-    }, 1500);
+    }, 800);
     setTimeout(() => {        
-        document.querySelector('.side-container .box').style.cssText  = `transform: translateX(0);`;        
+        document.querySelector('.side-container .box').style.cssText  = `transform: translateX(0);`;
         document.querySelector('.side-container .box').addEventListener('mouseover', function(){
-            this.style.cssText = `transform: scale(1.25,1.25);`;
+            this.style.cssText = `transform: scale(1.22,1.22);`;
         });
         document.querySelector('.side-container .box').addEventListener('mouseleave', function(){
             this.style.cssText = `transform: scale(1.0,1.0);`;
         });
-    }, 2000);
-    setTimeout(() => {
+    }, 1100);
+    setTimeout(()=>{               
         document.querySelectorAll('.icon').forEach(icon => {
             icon.style.cssText = `opacity: 1;`
         });
-    }, 2500);
+    }, 1400);
     setTimeout(() => {
         document.querySelector('.sentence').style.cssText = `
             transform: translateX(0);
         `;
-    }, 2800);
-
+    }, 1600);
+    setTimeout(() => {        
+        document.querySelector('.box').classList.add('first-open');
+        document.querySelector('.box').style.cssText = `transform: scale(1.22,1.22);`;        
+    }, 1800);
+    setTimeout(() => {        
+        document.querySelector('.box').classList.remove('first-open');        
+        document.querySelector('.box').style.cssText = `transform: scale(1,1);`;
+    }, 5000);
 }
+
+
 
 // var social_icons = document.querySelectorAll('social-icon');
 // social_icons.forEach(icon =>{
