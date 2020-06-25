@@ -127,27 +127,27 @@ window.onload = function(){
 //     // else if()
 // },1500);
 
-function hover_changes(){
-    document.querySelector(".imgbox").style.cssText = "clip-path: circle(70px at 50% 25%);"
-    document.querySelector('.box').style.cssText = `
-        background-color: #343a40;
-        border-radius: 10px;
-        box-shadow: 0 14px 28px rgba(0,0,0,0.2), 0 10px 10px rgba(0, 0, 0, 0.2);    
-        transform: scale(1.2, 1.2);
-        transition: transform 0.3s cubic-bezier(.57,.21,.69,1.25);`;
-        document.querySelector('.header').style.cssText = `            
-        opacity: 1;
-        transition: opacity cubic-bezier(.57,.21,.69,1.25) .1s;
-        transition-delay: .3s;`;
-        document.querySelector('.education').style.cssText = `            
-        opacity: 1;
-        transition: opacity cubic-bezier(.57,.21,.69,1.25) .1s;
-        transition-delay: .4s;`;
-        document.querySelector('.title').style.cssText = `            
-        opacity: 1;
-        transition: opacity cubic-bezier(.57,.21,.69,1.25) .1s;
-        transition-delay: .5s;`;
+// function hover_changes(){
+//     document.querySelector(".imgbox").style.cssText = "clip-path: circle(90px at 50% 28%);";
+//     document.querySelector('.box').style.cssText = `
+//         background-color: #343a40;
+//         border-radius: 10px;
+//         box-shadow: 0 14px 28px rgba(0,0,0,0.2), 0 10px 10px rgba(0, 0, 0, 0.2);    
+//         transform: scale(1.2, 1.2);
+//         transition: transform 0.3s cubic-bezier(.57,.21,.69,1.25);`;
+//         document.querySelector('.header').style.cssText = `            
+//         opacity: 1;
+//         transition: opacity cubic-bezier(.57,.21,.69,1.25) .1s;
+//         transition-delay: .3s;`;
+//         document.querySelector('.education').style.cssText = `            
+//         opacity: 1;
+//         transition: opacity cubic-bezier(.57,.21,.69,1.25) .1s;
+//         transition-delay: .4s;`;
+//         document.querySelector('.title').style.cssText = `            
+//         opacity: 1;
+//         transition: opacity cubic-bezier(.57,.21,.69,1.25) .1s;
+//         transition-delay: .5s;`;
 
-}
+// }
 
 // window.matchMedia("(max-width:425px").matches
